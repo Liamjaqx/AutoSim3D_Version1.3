@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_623lg")
-next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
+next_level_path = "uid://cwmwhfrwraq8e"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=220430573]
 texture_repeat = 2
@@ -29,10 +29,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -86.0
-offset_top = -434.0
-offset_right = 96.0
-offset_bottom = 489.0
+offset_left = -431.0
+offset_top = -819.0
+offset_right = 380.0
+offset_bottom = 814.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bsimd")
@@ -45,6 +45,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -185.0
+offset_right = 375.0
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
@@ -54,9 +58,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 556.0
-offset_right = -145.0
-offset_bottom = -85.0
+offset_left = 642.0
+offset_top = 104.0
+offset_right = -52.0
+offset_bottom = -162.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -84,13 +89,13 @@ size_flags_vertical = 3
 theme_override_constants/separation = 32
 script = ExtResource("2_sycfm")
 
-[node name="LoseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=946755686]
+[node name="Toyota" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=946755686]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
 text = "Toyota 7K"
 
-[node name="WinButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1767404680]
+[node name="Isuzu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1767404680]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 45
@@ -101,7 +106,7 @@ layout_mode = 2
 
 [node name="TutorialButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1203700847]
 layout_mode = 2
-text = "Tutorial"
+text = "Explore"
 
 [node name="InputDisplayLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1294001389]
 layout_mode = 2
@@ -114,6 +119,69 @@ unique_name_in_owner = true
 script = ExtResource("4_bsimd")
 tutorial_scenes = Array[PackedScene]([ExtResource("5_fmabn")])
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/LoseButton" to="." method="_on_lose_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
+[node name="MenuButtonsMargin" type="MarginContainer" parent="." unique_id=2007859351]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 320.0
+offset_right = 290.0
+offset_bottom = 464.0
+size_flags_vertical = 3
+theme_override_constants/margin_top = 136
+theme_override_constants/margin_bottom = 8
+
+[node name="MenuButtonsContainer" type="Control" parent="MenuButtonsMargin" unique_id=1432074624]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuButtonsMargin/MenuButtonsContainer" unique_id=250374176]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -335.0
+offset_right = 313.0
+offset_bottom = 430.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+alignment = 1
+vertical = true
+script = ExtResource("2_sycfm")
+lock = true
+
+[node name="Home" type="Button" parent="MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=348880458]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Home"
+
+[node name="Explore" type="Button" parent="MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=1944989171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Explore"
+
+[node name="Tutorial" type="Button" parent="MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=756222623]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Asembly"
+
+[node name="Profile" type="Button" parent="MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=1986693072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 180)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "profile"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Toyota" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Isuzu" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]

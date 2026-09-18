@@ -1,6 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://dhhoc8ayxksqe"]
-
-[ext_resource type="FontFile" uid="uid://dx3cysyjtn750" path="res://resources/themes/Kenney Future.ttf" id="1_dmtsn"]
-
-[resource]
-Button/fonts/font = ExtResource("1_dmtsn")
